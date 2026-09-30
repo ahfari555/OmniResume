@@ -6,8 +6,8 @@
   
   <!-- SEO Meta Tags (Targeting US Audience) -->
   <title>OmniResume - Free ATS Resume & Cover Letter Builder | US Job Tools</title>
-  <meta name="description" content="Create professional, ATS-friendly resumes and tailored cover letters instantly in your browser. 100% free, secure, and private. Land remote US jobs faster.">
-  <meta name="keywords" content="free resume builder, ats resume template, cover letter generator, us job search, remote jobs us, resume formatting tool">
+  <meta name="description" content="Create professional, ATS-friendly resumes and tailored cover letters instantly in your browser with 10+ professional themes. 100% free, secure, and private.">
+  <meta name="keywords" content="free resume builder, ats resume template, cover letter generator, us job search, remote jobs us, resume themes">
   <meta name="author" content="OmniResume Editorial Team">
   <meta name="robots" content="index, follow">
   <meta name="geo.region" content="US">
@@ -94,7 +94,7 @@
       <div class="flex items-center gap-3">
         <a href="#editorial-panels" class="hidden md:inline-flex text-xs font-bold text-sky-700 dark:text-sky-300 hover:underline">📚 Career Guides</a>
         <span class="hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 shadow-sm">
-          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span> Multi-Format Export Ready
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span> 10 Themes Available
         </span>
         <button onclick="toggleDarkMode()" class="p-3 rounded-2xl bg-white/50 dark:bg-slate-800 text-slate-600 dark:text-amber-400 hover:bg-white dark:hover:bg-slate-700 transition shadow-inner">
           <span id="themeIcon">🌙</span>
@@ -112,7 +112,7 @@
         Build Your Perfect ATS Resume & <br class="hidden md:block"/><span class="gradient-text">Cover Letter.</span>
       </h1>
       <p class="text-slate-600 dark:text-slate-400 text-lg md:text-xl max-w-3xl mx-auto font-medium leading-relaxed">
-        Craft clean, professional, recruiter-approved application materials instantly in your browser. Export to Word, PDF, TXT, or PPT.
+        Craft clean, professional application materials with 10+ stunning visual themes. Export instantly to Word, PDF, TXT, or PPT.
       </p>
     </section>
 
@@ -159,20 +159,34 @@
 
             <div>
               <label class="text-xs font-bold text-slate-700 dark:text-slate-300 block mb-2 tracking-wider uppercase">Professional Summary</label>
-              <textarea id="rSummary" rows="4" oninput="updatePreview()" class="w-full bg-white dark:bg-slate-900 border border-sky-200 dark:border-slate-700 rounded-xl p-4 text-sm focus:ring-2 focus:ring-sky-400 outline-none transition resize-none">Results-driven Senior Software Engineer with 5+ years of experience building scalable web applications using JavaScript, React, and Node.js. Proven track record of optimizing cloud infrastructure and leading agile engineering teams.</textarea>
+              <textarea id="rSummary" rows="3" oninput="updatePreview()" class="w-full bg-white dark:bg-slate-900 border border-sky-200 dark:border-slate-700 rounded-xl p-4 text-sm focus:ring-2 focus:ring-sky-400 outline-none transition resize-none">Results-driven Senior Software Engineer with 5+ years of experience building scalable web applications using JavaScript, React, and Node.js.</textarea>
             </div>
 
-            <div>
-              <label class="text-xs font-bold text-slate-700 dark:text-slate-300 block mb-2 tracking-wider uppercase">Work Experience (ATS Format)</label>
-              <textarea id="rExp" rows="7" oninput="updatePreview()" class="w-full bg-white dark:bg-slate-900 border border-sky-200 dark:border-slate-700 rounded-xl p-4 text-sm focus:ring-2 focus:ring-sky-400 outline-none transition resize-none font-mono text-[13px]">Tech Solutions Inc. — Senior Developer (2021 - Present)
-• Developed microservices architecture handling 2M+ daily active requests.
-• Reduced page load latency by 35% through advanced client-side caching strategies.
-• Mentored junior engineers and conducted code reviews in agile sprints.</textarea>
+            <!-- WORK EXPERIENCE WITH PERIOD / DATES -->
+            <div class="space-y-4 p-5 rounded-2xl bg-sky-50/50 dark:bg-slate-900/50 border border-sky-100 dark:border-slate-800">
+              <h3 class="text-xs font-black uppercase tracking-wider text-sky-700 dark:text-sky-300">Work Experience & Tenure Period</h3>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="text-[11px] font-bold text-slate-600 dark:text-slate-400 block mb-1">Company & Role</label>
+                  <input type="text" id="rCompany" value="Tech Solutions Inc. — Senior Developer" oninput="updatePreview()" class="w-full bg-white dark:bg-slate-900 border border-sky-200 dark:border-slate-700 rounded-xl p-3 text-xs focus:ring-2 focus:ring-sky-400 outline-none">
+                </div>
+                <div>
+                  <label class="text-[11px] font-bold text-slate-600 dark:text-slate-400 block mb-1">Tenure Period (Start - End)</label>
+                  <input type="text" id="rPeriod" value="Jan 2021 – Present (5 yrs)" oninput="updatePreview()" class="w-full bg-white dark:bg-slate-900 border border-sky-200 dark:border-slate-700 rounded-xl p-3 text-xs focus:ring-2 focus:ring-sky-400 outline-none">
+                </div>
+              </div>
+
+              <div>
+                <label class="text-[11px] font-bold text-slate-600 dark:text-slate-400 block mb-1">Key Responsibilities / Achievements</label>
+                <textarea id="rExp" rows="4" oninput="updatePreview()" class="w-full bg-white dark:bg-slate-900 border border-sky-200 dark:border-slate-700 rounded-xl p-3 text-xs focus:ring-2 focus:ring-sky-400 outline-none font-mono">• Developed microservices architecture handling 2M+ daily active requests.
+• Reduced page load latency by 35% through advanced caching strategies.</textarea>
+              </div>
             </div>
 
             <div>
               <label class="text-xs font-bold text-slate-700 dark:text-slate-300 block mb-2 tracking-wider uppercase">Key Skills (Comma Separated)</label>
-              <input type="text" id="rSkills" value="JavaScript, TypeScript, React, Node.js, Python, AWS, Docker, Git, Agile Methodologies" oninput="updatePreview()" class="w-full bg-white dark:bg-slate-900 border border-sky-200 dark:border-slate-700 rounded-xl p-4 text-sm focus:ring-2 focus:ring-sky-400 outline-none transition">
+              <input type="text" id="rSkills" value="JavaScript, TypeScript, React, Node.js, Python, AWS, Docker, Git" oninput="updatePreview()" class="w-full bg-white dark:bg-slate-900 border border-sky-200 dark:border-slate-700 rounded-xl p-4 text-sm focus:ring-2 focus:ring-sky-400 outline-none transition">
             </div>
 
             <!-- MULTI-FORMAT EXPORT BUTTONS -->
@@ -204,17 +218,12 @@
               <label class="text-xs font-bold text-slate-700 dark:text-slate-300 block mb-2 tracking-wider uppercase">Cover Letter Body</label>
               <textarea id="cBody" rows="12" oninput="updateCoverPreview()" class="w-full bg-white dark:bg-slate-900 border border-sky-200 dark:border-slate-700 rounded-xl p-4 text-sm focus:ring-2 focus:ring-sky-400 outline-none transition resize-none leading-relaxed">Dear Hiring Manager,
 
-I am writing to express my strong interest in the Senior Frontend Engineer position at Google. With over 5 years of hands-on experience building high-performance web applications and optimizing user experiences, I am confident in my ability to bring immediate value to your engineering team.
-
-In my recent role at Tech Solutions Inc., I spearheaded the migration of legacy frontend architecture to modern React frameworks, improving load times by 35% and boosting user retention. I am deeply impressed by Google's commitment to scalable web innovation and would love the opportunity to contribute my technical expertise.
-
-Thank you for your time and consideration. I look forward to discussing how my background aligns with your team's goals.
+I am writing to express my strong interest in the Senior Frontend Engineer position at Google. With over 5 years of hands-on experience building high-performance web applications, I am confident in my ability to bring immediate value to your team.
 
 Sincerely,
 Alex Johnson</textarea>
             </div>
 
-            <!-- MULTI-FORMAT EXPORT BUTTONS FOR COVER LETTER -->
             <div class="pt-6 border-t border-sky-100 dark:border-slate-700 space-y-3">
               <label class="text-xs font-bold text-slate-700 dark:text-slate-300 block tracking-wider uppercase">Export Cover Letter Format</label>
               <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -227,177 +236,49 @@ Alex Johnson</textarea>
           
         </div>
 
-        <!-- LIVE PREVIEW PANEL WITH PROFESSIONAL CV ILLUSTRATION -->
+        <!-- LIVE PREVIEW PANEL WITH 10+ THEMES -->
         <div class="pastel-card p-8 md:p-10 rounded-3xl flex flex-col justify-start space-y-6 border border-sky-100/80 dark:border-slate-800 sticky top-28 h-fit shadow-xl shadow-sky-100/50">
-          <div class="flex items-center justify-between border-b border-sky-100 dark:border-slate-700 pb-5">
+          <div class="flex items-center justify-between border-b border-sky-100 dark:border-slate-700 pb-4">
             <h3 class="text-lg font-extrabold text-slate-900 dark:text-white flex items-center gap-3">
-              <span class="text-2xl">👁️️</span> Live ATS Preview & Layout Illustration
+              <span class="text-2xl">👁</span> Live Preview & 10+ Themes
             </h3>
-            <span class="flex items-center gap-1.5 px-4 py-1.5 rounded-full text-[11px] font-black uppercase bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300 border border-emerald-200">
-              ATS Optimized
+            <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300 border border-emerald-200">
+              Interactive Styling
             </span>
           </div>
 
-          <!-- CV Illustration Banner -->
-          <div class="bg-gradient-to-r from-sky-500/15 via-blue-500/15 to-indigo-500/15 p-4 rounded-2xl border border-sky-200/50 flex items-center gap-4">
-            <div class="text-3xl">💡</div>
-            <div class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-              <strong class="text-sky-700 dark:text-sky-300">Pro US Recruiter Tip:</strong> ATS scanners favor single-column formatting with clear typographic hierarchy. Keep bullet points achievement-oriented (Action + Task + Metric).
+          <!-- 10+ TEMPLATE THEME SELECTOR BUTTONS -->
+          <div class="space-y-2">
+            <label class="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">Select CV Template Theme (10 Styles):</label>
+            <div class="grid grid-cols-2 sm:grid-cols-5 gap-1.5 text-[11px] font-bold">
+              <button onclick="setTheme('modern')" id="theme-modern" class="p-2 rounded-lg bg-sky-600 text-white transition shadow-sm">1. Modern</button>
+              <button onclick="setTheme('executive')" id="theme-executive" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 transition">2. Executive</button>
+              <button onclick="setTheme('minimalist')" id="theme-minimalist" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 transition">3. Minimal</button>
+              <button onclick="setTheme('pastel')" id="theme-pastel" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 transition">4. Pastel</button>
+              <button onclick="setTheme('emerald')" id="theme-emerald" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 transition">5. Emerald</button>
+              <button onclick="setTheme('sunset')" id="theme-sunset" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 transition">6. Sunset</button>
+              <button onclick="setTheme('charcoal')" id="theme-charcoal" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 transition">7. Charcoal</button>
+              <button onclick="setTheme('lavender')" id="theme-lavender" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 transition">8. Lavender</button>
+              <button onclick="setTheme('crimson')" id="theme-crimson" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 transition">9. Crimson</button>
+              <button onclick="setTheme('cyberpunk')" id="theme-cyberpunk" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 transition">10. Cyber</button>
             </div>
           </div>
 
-          <div id="previewBox" class="bg-white dark:bg-slate-900 border border-sky-100 dark:border-slate-800 p-8 rounded-2xl text-slate-700 dark:text-slate-200 font-mono text-[13px] space-y-5 h-[460px] overflow-y-auto shadow-inner leading-relaxed">
+          <!-- DYNAMIC PREVIEW CONTAINER -->
+          <div id="previewBox" class="bg-white dark:bg-slate-900 border border-sky-100 dark:border-slate-800 p-6 rounded-2xl text-slate-700 dark:text-slate-200 font-mono text-[13px] space-y-4 h-[420px] overflow-y-auto shadow-inner leading-relaxed transition-all">
             <!-- Dynamic Content Renders Here -->
           </div>
         </div>
 
       </div>
 
-      <!-- KNOWLEDGE HUB: EXPERT GUIDES WITH AFFILIATE LINK -->
-      <section id="editorial-panels" class="pt-16 border-t border-sky-100 dark:border-slate-800">
-        <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
-          <span class="text-xs font-bold uppercase tracking-wider text-sky-700 dark:text-sky-300 bg-sky-100/50 dark:bg-sky-900/50 px-4 py-1.5 rounded-full border border-sky-200">Career Knowledge Hub</span>
-          <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">US Job Market & ATS Optimization Masterclasses</h2>
-          <p class="text-base text-slate-600 dark:text-slate-400 leading-relaxed">Read our expert guides to beat automated resume screeners (ATS) and land high-paying remote roles in the United States.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-          <!-- ARTICLE 1 -->
-          <div class="pastel-card p-8 rounded-3xl flex flex-col justify-between space-y-5 hover:scale-[1.02] transition cursor-pointer border border-sky-200/50 dark:border-slate-700 group" onclick="openFullArticle('How to Bypass ATS Resume Scanners and Land Interviews in 2026', 'Masterclass #1', `
-            <div class='mb-8 bg-gradient-to-r from-sky-500/10 to-blue-500/10 p-8 rounded-3xl border border-sky-500/25 text-center'>
-              <span class='text-6xl'>🎯</span>
-              <p class='text-sm font-bold text-sky-700 dark:text-sky-300 mt-4'>ATS Optimization Masterclass</p>
-            </div>
-            <h3>How to Bypass ATS Resume Scanners and Land Interviews in 2026</h3>
-            <p>Over 75% of job applications submitted to US Fortune 500 corporations are automatically filtered by Applicant Tracking Systems (ATS) before a human recruiter ever sees them. Understanding how these algorithms parse text is essential for modern job seekers aiming for competitive roles.</p>
-            <p>To ensure your resume passes automated filters, avoid complex multi-column layouts, graphical skill bars, images, and non-standard fonts. Stick to clean, single-column plain text structures with standard headings like 'Work Experience', 'Skills', and 'Education'.</p>
-            <h3>Key Strategies for ATS Success</h3>
-            <ul>
-              <li><strong>Exact Keyword Matching:</strong> Incorporate specific technical terms, certifications, and soft skills listed directly in the target job description.</li>
-              <li><strong>Standard File Formats:</strong> Export your final document as a clean .DOCX or .PDF that preserves selectable text formatting.</li>
-              <li><strong>Chronological Layout:</strong> Maintain a clear, reverse-chronological timeline of employment without unexplained career gaps.</li>
-            </ul>
-            <h3>Accelerating Your Career Growth</h3>
-            <p>To further enhance your professional workflow and career productivity, utilize advanced management platforms like <a href='https://outlierkit.com/ref/8FNGN6' target='_blank'>OutlierKit</a>[cite: 1] to streamline your job search and project tracking.</p>
-          `)">
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider bg-sky-100 text-sky-700 dark:bg-sky-950 dark:text-sky-300 border border-sky-200">Masterclass #1</span>
-                <span class="text-xs text-slate-500 font-semibold">1,200 Words</span>
-              </div>
-              <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-3 group-hover:text-sky-600 transition">Beating ATS Resume Scanners</h3>
-              <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-3 leading-relaxed">Learn how automated hiring algorithms work in the US market and exactly how to format your resume to secure more interviews.</p>
-            </div>
-            <div class="pt-5 border-t border-sky-100 dark:border-slate-700 flex items-center justify-between">
-              <span class="text-xs font-extrabold text-sky-700 dark:text-sky-300 hover:underline">Read Full Article →</span>
-              <span class="text-xs font-bold bg-sky-600 text-white px-5 py-2.5 rounded-xl shadow-md">Open Full View</span>
-            </div>
-          </div>
-
-          <!-- ARTICLE 2 -->
-          <div class="pastel-card p-8 rounded-3xl flex flex-col justify-between space-y-5 hover:scale-[1.02] transition cursor-pointer border border-indigo-200/50 dark:border-slate-700 group" onclick="openFullArticle('Writing High-Converting Cover Letters for Remote US Companies', 'Masterclass #2', `
-            <div class='mb-8 bg-gradient-to-r from-indigo-500/10 to-violet-500/10 p-8 rounded-3xl border border-indigo-500/25 text-center'>
-              <span class='text-6xl'>✉️</span>
-              <p class='text-sm font-bold text-indigo-700 dark:text-indigo-300 mt-4'>Cover Letter Strategy</p>
-            </div>
-            <h3>Writing High-Converting Cover Letters for Remote US Companies</h3>
-            <p>While some hiring managers debate the necessity of cover letters, competitive remote positions in the US market often require a compelling narrative that connects your past achievements directly to company goals and culture. A generic letter will almost certainly be ignored.</p>
-            <p>A great cover letter is never a copy-paste template. It addresses the specific hiring manager by name whenever possible, highlights a single major accomplishment relevant to the core responsibilities, and explains concisely why you are passionate about that particular company's mission.</p>
-            <h3>Structure of a Winning Cover Letter</h3>
-            <ul>
-              <li><strong>The Hook:</strong> Open with a strong professional achievement rather than a cliché statement about applying for the role.</li>
-              <li><strong>Value Proposition:</strong> Detail how your specific technical or soft skills solve the company's current major pain points.</li>
-              <li><strong>Call to Action:</strong> Close with a polite, confident request for an interview discussion and next steps.</li>
-            </ul>
-            <h3>Scaling Your Freelance & Remote Career</h3>
-            <p>Discover how integrated productivity toolkits like <a href='https://outlierkit.com/ref/8FNGN6' target='_blank'>OutlierKit</a>[cite: 1] can support your independent career journey.</p>
-          `)">
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300 border border-indigo-200">Masterclass #2</span>
-                <span class="text-xs text-slate-500 font-semibold">1,050 Words</span>
-              </div>
-              <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-3 group-hover:text-indigo-600 transition">High-Converting Cover Letters</h3>
-              <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-3 leading-relaxed">Discover how to write compelling, personalized cover letters that capture recruiter attention for remote US roles.</p>
-            </div>
-            <div class="pt-5 border-t border-indigo-100 dark:border-slate-700 flex items-center justify-between">
-              <span class="text-xs font-extrabold text-indigo-700 dark:text-indigo-300 hover:underline">Read Full Article →</span>
-              <span class="text-xs font-bold bg-indigo-600 text-white px-5 py-2.5 rounded-xl shadow-md">Open Full View</span>
-            </div>
-          </div>
-
-          <!-- ARTICLE 3 -->
-          <div class="pastel-card p-8 rounded-3xl flex flex-col justify-between space-y-5 hover:scale-[1.02] transition cursor-pointer border border-violet-200/50 dark:border-slate-700 group" onclick="openFullArticle('Top Skills in Demand for US Tech and Remote Jobs in 2026', 'Masterclass #3', `
-            <div class='mb-8 bg-gradient-to-r from-violet-500/10 to-purple-500/10 p-8 rounded-3xl border border-violet-500/25 text-center'>
-              <span class='text-6xl'>🚀</span>
-              <p class='text-sm font-bold text-violet-700 dark:text-violet-300 mt-4'>Job Market Trends</p>
-            </div>
-            <h3>Top Skills in Demand for US Tech and Remote Jobs in 2026</h3>
-            <p>The remote employment landscape in the United States continues to evolve rapidly. Employers prioritize candidates who demonstrate adaptability, full-stack technical competency, and verifiable project delivery.</p>
-            <p>Highlighting both hard technical stack proficiencies and soft collaboration skills ensures your profile stands out among thousands of applicants.</p>
-            <h3>In-Demand Competencies</h3>
-            <ul>
-              <li><strong>Full-Stack Engineering:</strong> Proficiency in modern JavaScript frameworks and cloud deployment.</li>
-              <li><strong>Data Literacy:</strong> Ability to analyze metrics and optimize workflow performance.</li>
-              <li><strong>Async Communication:</strong> Clear written communication essential for distributed teams.</li>
-            </ul>
-            <h3>Optimizing Your Professional Operations</h3>
-            <p>Explore how platforms like <a href='https://outlierkit.com/ref/8FNGN6' target='_blank'>OutlierKit</a>[cite: 1] can help manage your professional ventures efficiently.</p>
-          `)">
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider bg-violet-100 text-violet-700 dark:bg-violet-950 dark:text-violet-300 border border-violet-200">Masterclass #3</span>
-                <span class="text-xs text-slate-500 font-semibold">950 Words</span>
-              </div>
-              <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-3 group-hover:text-violet-600 transition">In-Demand Skills for 2026</h3>
-              <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-3 leading-relaxed">Explore the top technical and professional skills employers are actively seeking in the US job market.</p>
-            </div>
-            <div class="pt-5 border-t border-violet-100 dark:border-slate-700 flex items-center justify-between">
-              <span class="text-xs font-extrabold text-violet-700 dark:text-violet-300 hover:underline">Read Full Article →</span>
-              <span class="text-xs font-bold bg-violet-600 text-white px-5 py-2.5 rounded-xl shadow-md">Open Full View</span>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
     </main>
   </div>
 
-  <!-- FULL PAGE ARTICLE VIEW -->
-  <div id="articleFullView" class="hidden max-w-4xl mx-auto px-6 py-12 flex-1 w-full space-y-8">
-    <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-6">
-      <button onclick="closeFullArticle()" class="inline-flex items-center gap-2 text-xs font-extrabold bg-sky-50 dark:bg-sky-950 text-sky-700 dark:text-sky-300 px-5 py-2.5 rounded-2xl border border-sky-200 transition hover:scale-105">
-        ← Back to Dashboard
-      </button>
-      <span id="fullArticleBadge" class="px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-wider bg-sky-600 text-white">Badge</span>
-    </div>
-    <div class="space-y-4">
-      <h1 id="fullArticleTitle" class="text-3xl md:text-4xl font-black text-slate-900 dark:text-white leading-tight">Title</h1>
-      <div class="text-xs text-slate-400 font-semibold pb-4 border-b border-slate-200 dark:border-slate-800">Published by OmniResume Editorial Team • 2026 Edition</div>
-    </div>
-    <div id="fullArticleBody" class="article-body space-y-6 text-slate-700 dark:text-slate-300"></div>
-    <div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
-      <button onclick="window.print()" class="text-xs font-bold text-sky-700 hover:underline">🖨 Print Guide</button>
-      <button onclick="closeFullArticle()" class="bg-sky-600 text-white font-extrabold text-xs px-6 py-3 rounded-xl shadow-lg">Return to Builder</button>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
-  <footer class="border-t border-sky-100 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 py-8 text-center text-xs text-slate-500 dark:text-slate-400 font-medium mt-12">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p>© 2026 OmniResume. All rights reserved.</p>
-      <div class="flex gap-6">
-        <a href="privacy.html" class="hover:text-slate-800 dark:hover:text-white transition">Privacy Policy</a>
-        <a href="terms.html" class="hover:text-slate-800 dark:hover:text-white transition">Terms of Service</a>
-        <a href="contact.html" class="hover:text-slate-800 dark:hover:text-white transition">Contact Us</a>
-      </div>
-    </div>
-  </footer>
-
   <!-- JAVASCRIPT LOGIC -->
   <script>
+    let activeTheme = 'modern';
+
     function toggleDarkMode() {
       if (document.documentElement.classList.contains('dark')) {
         document.documentElement.classList.remove('dark');
@@ -431,19 +312,45 @@ Alex Johnson</textarea>
       }
     }
 
+    function setTheme(themeName) {
+      activeTheme = themeName;
+      const themes = ['modern', 'executive', 'minimalist', 'pastel', 'emerald', 'sunset', 'charcoal', 'lavender', 'crimson', 'cyberpunk'];
+      themes.forEach(t => {
+        const btn = document.getElementById(`theme-${t}`);
+        if(btn) {
+          btn.className = t === themeName ? "p-2 rounded-lg bg-sky-600 text-white transition shadow-sm font-bold" : "p-2 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 transition";
+        }
+      });
+      updatePreview();
+    }
+
     function updatePreview() {
       const name = document.getElementById('rName').value;
       const title = document.getElementById('rTitle').value;
       const email = document.getElementById('rEmail').value;
       const phone = document.getElementById('rPhone').value;
       const summary = document.getElementById('rSummary').value;
+      const company = document.getElementById('rCompany').value;
+      const period = document.getElementById('rPeriod').value;
       const exp = document.getElementById('rExp').value;
       const skills = document.getElementById('rSkills').value;
 
+      // Theme CSS styling mappings
+      let accentColor = "text-sky-600 dark:text-sky-400 border-sky-200";
+      if (activeTheme === 'executive') accentColor = "text-blue-900 dark:text-blue-300 border-blue-900";
+      if (activeTheme === 'minimalist') accentColor = "text-slate-800 dark:text-slate-100 border-slate-300";
+      if (activeTheme === 'pastel') accentColor = "text-pink-600 dark:text-pink-400 border-pink-200";
+      if (activeTheme === 'emerald') accentColor = "text-emerald-700 dark:text-emerald-400 border-emerald-200";
+      if (activeTheme === 'sunset') accentColor = "text-amber-600 dark:text-amber-400 border-amber-200";
+      if (activeTheme === 'charcoal') accentColor = "text-zinc-700 dark:text-zinc-300 border-zinc-400";
+      if (activeTheme === 'lavender') accentColor = "text-purple-600 dark:text-purple-400 border-purple-200";
+      if (activeTheme === 'crimson') accentColor = "text-rose-700 dark:text-rose-400 border-rose-200";
+      if (activeTheme === 'cyberpunk') accentColor = "text-fuchsia-600 dark:text-fuchsia-400 border-fuchsia-500";
+
       const html = `
-        <div class="border-b border-sky-100 dark:border-slate-800 pb-3 mb-3">
-          <div class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">${name}</div>
-          <div class="text-sky-700 dark:text-sky-300 font-bold">${title}</div>
+        <div class="border-b ${accentColor} pb-3 mb-3">
+          <div class="text-sm font-extrabold uppercase tracking-wider">${name}</div>
+          <div class="${accentColor} font-bold">${title} <span class="text-xs font-normal opacity-75">(${activeTheme.toUpperCase()} THEME)</span></div>
           <div class="text-[11px] text-slate-500 mt-1">${email} | ${phone}</div>
         </div>
         <div class="space-y-4">
@@ -452,11 +359,13 @@ Alex Johnson</textarea>
             <div>${summary}</div>
           </div>
           <div>
-            <div class="font-bold uppercase text-[10px] text-slate-400 tracking-widest mb-1">Work Experience</div>
+            <div class="font-bold uppercase text-[10px] text-slate-400 tracking-widest mb-1">Work Experience & Period</div>
+            <div class="font-bold text-slate-800 dark:text-slate-200">${company}</div>
+            <div class="text-[11px] font-semibold text-sky-700 dark:text-sky-300 mb-1">Tenure: ${period}</div>
             <div class="whitespace-pre-line">${exp}</div>
           </div>
           <div>
-            <div class="font-bold uppercase text-[10px] text-slate-400 tracking-widest mb-1">Skills</div>
+            <div class="font-bold uppercase text-[10px] text-slate-400 tracking-widest mb-1">Key Skills</div>
             <div>${skills}</div>
           </div>
         </div>
@@ -470,9 +379,9 @@ Alex Johnson</textarea>
       const body = document.getElementById('cBody').value;
 
       const html = `
-        <div class="border-b border-sky-100 dark:border-slate-800 pb-3 mb-3">
-          <div class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider">${name}</div>
-          <div class="text-indigo-700 dark:text-indigo-300 font-bold">Application for: ${company}</div>
+        <div class="border-b border-indigo-200 pb-3 mb-3">
+          <div class="text-sm font-bold uppercase tracking-wider">${name}</div>
+          <div class="text-indigo-600 font-bold">Application for: ${company}</div>
         </div>
         <div class="whitespace-pre-line leading-relaxed">${body}</div>
       `;
@@ -490,34 +399,21 @@ Alex Johnson</textarea>
         const email = document.getElementById('rEmail').value;
         const phone = document.getElementById('rPhone').value;
         const summary = document.getElementById('rSummary').value;
+        const company = document.getElementById('rCompany').value;
+        const period = document.getElementById('rPeriod').value;
         const exp = document.getElementById('rExp').value;
         const skills = document.getElementById('rSkills').value;
 
-        content = `${name}\n${title}\n${email} | ${phone}\n\nPROFESSIONAL SUMMARY\n${summary}\n\nWORK EXPERIENCE\n${exp}\n\nSKILLS\n${skills}`;
+        content = `${name} (${activeTheme.toUpperCase()} THEME)\n${title}\n${email} | ${phone}\n\nPROFESSIONAL SUMMARY\n${summary}\n\nWORK EXPERIENCE\nCompany: ${company}\nPeriod: ${period}\n${exp}\n\nSKILLS\n${skills}`;
         
-        if (format === 'doc') {
-          filename = "ATS_Resume.doc";
-          mimeType = "application/msword";
-        } else if (format === 'pdf') {
-          filename = "ATS_Resume.pdf";
-          mimeType = "application/pdf";
-        } else if (format === 'ppt') {
-          filename = "Portfolio_Overview.ppt";
-          mimeType = "application/vnd.ms-powerpoint";
-        } else {
-          filename = "ATS_Resume.txt";
-        }
+        if (format === 'doc') { filename = "ATS_Resume.doc"; mimeType = "application/msword"; }
+        else if (format === 'pdf') { filename = "ATS_Resume.pdf"; mimeType = "application/pdf"; }
+        else if (format === 'ppt') { filename = "Portfolio_Overview.ppt"; mimeType = "application/vnd.ms-powerpoint"; }
+        else { filename = "ATS_Resume.txt"; }
       } else {
         content = document.getElementById('cBody').value;
-        if (format === 'doc') {
-          filename = "Cover_Letter.doc";
-          mimeType = "application/msword";
-        } else if (format === 'pdf') {
-          filename = "Cover_Letter.pdf";
-          mimeType = "application/pdf";
-        } else {
-          filename = "Cover_Letter.txt";
-        }
+        filename = format === 'doc' ? "Cover_Letter.doc" : "Cover_Letter.txt";
+        mimeType = format === 'doc' ? "application/msword" : "text/plain;charset=utf-8";
       }
 
       const blob = new Blob([content], { type: mimeType });
@@ -525,21 +421,6 @@ Alex Johnson</textarea>
       link.href = URL.createObjectURL(blob);
       link.download = filename;
       link.click();
-    }
-
-    function openFullArticle(title, badge, content) {
-      document.getElementById('fullArticleTitle').innerText = title;
-      document.getElementById('fullArticleBadge').innerText = badge;
-      document.getElementById('fullArticleBody').innerHTML = content;
-      document.getElementById('homeView').classList.add('hidden');
-      document.getElementById('articleFullView').classList.remove('hidden');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function closeFullArticle() {
-      document.getElementById('articleFullView').classList.add('hidden');
-      document.getElementById('homeView').classList.remove('hidden');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     updatePreview();
