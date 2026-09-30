@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- SEO Meta Tags (Targeting US Audience) -->
+  <!-- SEO Meta Tags -->
   <title>OmniResume - Free ATS Resume & Cover Letter Builder | US Job Tools</title>
   <meta name="description" content="Create professional, ATS-friendly resumes and tailored cover letters instantly in your browser with 10+ professional themes. 100% free, secure, and private.">
   <meta name="keywords" content="free resume builder, ats resume template, cover letter generator, us job search, remote jobs us, resume themes">
@@ -112,7 +112,7 @@
         Build Your Perfect ATS Resume & <br class="hidden md:block"/><span class="gradient-text">Cover Letter.</span>
       </h1>
       <p class="text-slate-600 dark:text-slate-400 text-lg md:text-xl max-w-3xl mx-auto font-medium leading-relaxed">
-        Craft clean, professional application materials with 10+ stunning visual themes. Export instantly to Word, PDF, TXT, or PPT.
+        Craft clean application materials with 10+ stunning visual themes. Export instantly or print to PDF.
       </p>
     </section>
 
@@ -189,19 +189,19 @@
               <input type="text" id="rSkills" value="JavaScript, TypeScript, React, Node.js, Python, AWS, Docker, Git" oninput="updatePreview()" class="w-full bg-white dark:bg-slate-900 border border-sky-200 dark:border-slate-700 rounded-xl p-4 text-sm focus:ring-2 focus:ring-sky-400 outline-none transition">
             </div>
 
-            <!-- MULTI-FORMAT EXPORT BUTTONS -->
+            <!-- EXPORT BUTTONS -->
             <div class="pt-6 border-t border-sky-100 dark:border-slate-700 space-y-3">
-              <label class="text-xs font-bold text-slate-700 dark:text-slate-300 block tracking-wider uppercase">Export Resume / CV Format</label>
+              <label class="text-xs font-bold text-slate-700 dark:text-slate-300 block tracking-wider uppercase">Export Resume Format</label>
               <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
                 <button onclick="downloadDocument('resume', 'doc')" class="bg-blue-600 hover:bg-blue-700 text-white font-extrabold py-3 px-3 rounded-xl text-xs transition shadow-md">📄 Word (.doc)</button>
-                <button onclick="downloadDocument('resume', 'pdf')" class="bg-rose-600 hover:bg-rose-700 text-white font-extrabold py-3 px-3 rounded-xl text-xs transition shadow-md">📑 PDF (.pdf)</button>
+                <button onclick="downloadDocument('resume', 'pdf')" class="bg-rose-600 hover:bg-rose-700 text-white font-extrabold py-3 px-3 rounded-xl text-xs transition shadow-md">📑 Print PDF</button>
                 <button onclick="downloadDocument('resume', 'txt')" class="bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3 px-3 rounded-xl text-xs transition shadow-md">📝 Plain (.txt)</button>
                 <button onclick="downloadDocument('resume', 'ppt')" class="bg-amber-600 hover:bg-amber-700 text-white font-extrabold py-3 px-3 rounded-xl text-xs transition shadow-md">📊 Portfolio (.ppt)</button>
               </div>
             </div>
           </div>
 
-          <!-- COVER LETTER FORM INPUTS (HIDDEN BY DEFAULT) -->
+          <!-- COVER LETTER FORM INPUTS -->
           <div id="coverForm" class="space-y-6 hidden">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
@@ -228,7 +228,7 @@ Alex Johnson</textarea>
               <label class="text-xs font-bold text-slate-700 dark:text-slate-300 block tracking-wider uppercase">Export Cover Letter Format</label>
               <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
                 <button onclick="downloadDocument('cover', 'doc')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold py-3 px-3 rounded-xl text-xs transition shadow-md">📄 Word (.doc)</button>
-                <button onclick="downloadDocument('cover', 'pdf')" class="bg-rose-600 hover:bg-rose-700 text-white font-extrabold py-3 px-3 rounded-xl text-xs transition shadow-md">📑 PDF (.pdf)</button>
+                <button onclick="downloadDocument('cover', 'pdf')" class="bg-rose-600 hover:bg-rose-700 text-white font-extrabold py-3 px-3 rounded-xl text-xs transition shadow-md">📑 Print PDF</button>
                 <button onclick="downloadDocument('cover', 'txt')" class="bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3 px-3 rounded-xl text-xs transition shadow-md">📝 Plain (.txt)</button>
               </div>
             </div>
@@ -335,7 +335,6 @@ Alex Johnson</textarea>
       const exp = document.getElementById('rExp').value;
       const skills = document.getElementById('rSkills').value;
 
-      // Theme CSS styling mappings
       let accentColor = "text-sky-600 dark:text-sky-400 border-sky-200";
       if (activeTheme === 'executive') accentColor = "text-blue-900 dark:text-blue-300 border-blue-900";
       if (activeTheme === 'minimalist') accentColor = "text-slate-800 dark:text-slate-100 border-slate-300";
@@ -389,6 +388,11 @@ Alex Johnson</textarea>
     }
 
     function downloadDocument(type, format) {
+      if (format === 'pdf') {
+        window.print();
+        return;
+      }
+
       let content = "";
       let filename = "";
       let mimeType = "text/plain;charset=utf-8";
@@ -404,12 +408,31 @@ Alex Johnson</textarea>
         const exp = document.getElementById('rExp').value;
         const skills = document.getElementById('rSkills').value;
 
-        content = `${name} (${activeTheme.toUpperCase()} THEME)\n${title}\n${email} | ${phone}\n\nPROFESSIONAL SUMMARY\n${summary}\n\nWORK EXPERIENCE\nCompany: ${company}\nPeriod: ${period}\n${exp}\n\nSKILLS\n${skills}`;
-        
-        if (format === 'doc') { filename = "ATS_Resume.doc"; mimeType = "application/msword"; }
-        else if (format === 'pdf') { filename = "ATS_Resume.pdf"; mimeType = "application/pdf"; }
-        else if (format === 'ppt') { filename = "Portfolio_Overview.ppt"; mimeType = "application/vnd.ms-powerpoint"; }
-        else { filename = "ATS_Resume.txt"; }
+        if (format === 'doc') {
+          filename = "ATS_Resume.doc";
+          mimeType = "application/msword";
+          content = `<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+          <head><title>Resume</title><style>body {font-family: Arial, sans-serif; line-height: 1.6; color: #333;}</style></head>
+          <body>
+            <h2>${name} (${activeTheme.toUpperCase()} THEME)</h2>
+            <p><strong>${title}</strong><br>${email} | ${phone}</p>
+            <hr>
+            <h3>Professional Summary</h3>
+            <p>${summary}</p>
+            <h3>Work Experience & Period</h3>
+            <p><strong>${company}</strong><br><em>Tenure: ${period}</em></p>
+            <p>${exp.replace(/\n/g, '<br>')}</p>
+            <h3>Key Skills</h3>
+            <p>${skills}</p>
+          </body></html>`;
+        } else if (format === 'ppt') {
+          filename = "Portfolio_Overview.ppt";
+          mimeType = "application/vnd.ms-powerpoint";
+          content = `${name}\n${title}\n\nSummary:\n${summary}\n\nExperience:\n${company} (${period})\n${exp}\n\nSkills:\n${skills}`;
+        } else {
+          filename = "ATS_Resume.txt";
+          content = `${name} (${activeTheme.toUpperCase()} THEME)\n${title}\n${email} | ${phone}\n\nPROFESSIONAL SUMMARY\n${summary}\n\nWORK EXPERIENCE\nCompany: ${company}\nPeriod: ${period}\n${exp}\n\nSKILLS\n${skills}`;
+        }
       } else {
         content = document.getElementById('cBody').value;
         filename = format === 'doc' ? "Cover_Letter.doc" : "Cover_Letter.txt";
